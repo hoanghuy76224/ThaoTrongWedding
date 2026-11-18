@@ -730,6 +730,21 @@
   .quick-nav a{font-family:'Archivo',sans-serif;font-size:11px;letter-spacing:.08em;text-decoration:none;color:#fff;background:var(--film-warm);padding:9px 14px;border-radius:99px;white-space:nowrap}
   .quick-nav a.ghost{background:rgba(255,255,255,.85);color:var(--film-warm);border:1px solid var(--film-warm)}
 
+
+  .album{background:var(--film-bg);padding:12vh 0 10vh;text-align:center;overflow:hidden}
+  .album .head{font-family:'Archivo',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--film-warm);margin-bottom:16px}
+  .album h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,7vw,52px);line-height:1.2;color:var(--film-cream);margin:0 0 10px}
+  .album .hint{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--film-cream);opacity:.75;margin:0 0 30px}
+  .book{position:relative;width:min(80vw,400px);aspect-ratio:2953/4134;margin:0 auto;perspective:1800px;user-select:none;-webkit-user-select:none;touch-action:pan-y}
+  .book::before{content:"";position:absolute;inset:-6px -6px -8px -6px;background:#e9e2d3;border-radius:4px;box-shadow:0 18px 44px rgba(62,75,69,.25)}
+  .bpage{position:absolute;inset:0;transform-origin:left center;transition:transform 1s cubic-bezier(.5,.05,.25,1);backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#fff;overflow:hidden;cursor:pointer}
+  .bpage img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+  .bpage::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.22),rgba(0,0,0,0) 9%);opacity:.7;transition:opacity 1s}
+  .bpage.turned{transform:rotateY(-178deg);pointer-events:none}
+  .bpage.turned::after{opacity:0}
+  .bctl{display:flex;align-items:center;justify-content:center;gap:22px;margin-top:30px;font-family:'Archivo',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--film-cream)}
+  .bctl button{width:42px;height:42px;border-radius:50%;border:1px solid var(--film-warm);background:transparent;color:var(--film-warm);font-size:16px;cursor:pointer}
+  .bctl button:disabled{opacity:.3;cursor:default}
   .gift{background:var(--film-bg);padding:12vh 24px;text-align:center}
   .gift .head{font-family:'Archivo',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--film-warm);margin-bottom:18px}
   .gift h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,7vw,52px);line-height:1.2;color:var(--film-cream);margin:0 0 22px}
@@ -1056,7 +1071,7 @@
     <span>Chiếc nhẫn ấy là lời hứa về một tương lai có cả hai người.</span>
   </div>
 </section>
-<section class="story" data-scene="11" data-name="STORY"><div class="story-in"><p>Tháng 11 năm 2025, Trọng về Việt Nam thăm gia đình và dành cho Thảo một bất ngờ: chiếc nhẫn tình yêu tự tay anh chọn trong chuyến đi Đức, như một lời hứa về tương lai có cả hai người.</p><p>Tháng 3 năm 2026, Trọng chính thức trở về làm việc. Không còn những chuyến thăm ngắn ngày hay những lời chào tạm biệt, họ trở lại bên nhau, cùng tận hưởng những điều bình dị mà trước đây chỉ có thể mong chờ qua những cuộc gọi.</p></div></section><section class="intermission" data-scene="12" data-name="CHAPTER IV">
+<section class="story" data-scene="11" data-name="STORY"><div class="story-in"><p>Trọng đã nghe ở đâu đó rằng: hạnh phúc của một người phụ nữ được đánh dấu bằng ba chiếc nhẫn: nhẫn tình yêu, nhẫn cầu hôn và nhẫn cưới. Vậy là…</p><p>Tháng 11 năm 2025, Trọng về Việt Nam thăm gia đình và dành cho Thảo một bất ngờ: chiếc nhẫn tình yêu tự tay anh chọn trong chuyến đi Đức, như một lời hứa về tương lai có cả hai người.</p><p>Tháng 3 năm 2026, Trọng chính thức trở về làm việc. Không còn những chuyến thăm ngắn ngày hay những lời chào tạm biệt, họ trở lại bên nhau, cùng tận hưởng những điều bình dị mà trước đây chỉ có thể mong chờ qua những cuộc gọi.</p></div></section><section class="intermission" data-scene="12" data-name="CHAPTER IV">
   <div class="num-big" data-rom="IV">IV</div>
   <div class="label"><span class="ch-no">Chapter Four</span><span class="ch-name">Cầu Hôn</span></div>
   <p class="quote">"Lần này, không chỉ là một món quà, mà là một lời ngỏ về tương lai."</p>
@@ -1138,6 +1153,14 @@
       </a>
     </div>
   </div>
+</section>
+
+<section class="album" data-scene="23a" data-name="ALBUM">
+  <div class="head">Album ảnh cưới</div>
+  <h2>Our Stories</h2>
+  <p class="hint">Chạm hoặc vuốt để lật trang</p>
+  <div class="book" id="book"><div class="bpage" data-i="0"><img src="images/album/p00.webp?v=1" alt="Album ảnh cưới trang 1"></div><div class="bpage" data-i="1"><img src="images/album/p01.webp?v=1" alt="Album ảnh cưới trang 2"></div><div class="bpage" data-i="2"><img src="images/album/p02.webp?v=1" alt="Album ảnh cưới trang 3"></div><div class="bpage" data-i="3"><img data-src="images/album/p03.webp?v=1" alt="Album ảnh cưới trang 4"></div><div class="bpage" data-i="4"><img data-src="images/album/p04.webp?v=1" alt="Album ảnh cưới trang 5"></div><div class="bpage" data-i="5"><img data-src="images/album/p05.webp?v=1" alt="Album ảnh cưới trang 6"></div><div class="bpage" data-i="6"><img data-src="images/album/p06.webp?v=1" alt="Album ảnh cưới trang 7"></div><div class="bpage" data-i="7"><img data-src="images/album/p07.webp?v=1" alt="Album ảnh cưới trang 8"></div><div class="bpage" data-i="8"><img data-src="images/album/p08.webp?v=1" alt="Album ảnh cưới trang 9"></div><div class="bpage" data-i="9"><img data-src="images/album/p09.webp?v=1" alt="Album ảnh cưới trang 10"></div><div class="bpage" data-i="10"><img data-src="images/album/p10.webp?v=1" alt="Album ảnh cưới trang 11"></div><div class="bpage" data-i="11"><img data-src="images/album/p11.webp?v=1" alt="Album ảnh cưới trang 12"></div><div class="bpage" data-i="12"><img data-src="images/album/p12.webp?v=1" alt="Album ảnh cưới trang 13"></div><div class="bpage" data-i="13"><img data-src="images/album/p13.webp?v=1" alt="Album ảnh cưới trang 14"></div><div class="bpage" data-i="14"><img data-src="images/album/p14.webp?v=1" alt="Album ảnh cưới trang 15"></div><div class="bpage" data-i="15"><img data-src="images/album/p15.webp?v=1" alt="Album ảnh cưới trang 16"></div><div class="bpage" data-i="16"><img data-src="images/album/p16.webp?v=1" alt="Album ảnh cưới trang 17"></div><div class="bpage" data-i="17"><img data-src="images/album/p17.webp?v=1" alt="Album ảnh cưới trang 18"></div><div class="bpage" data-i="18"><img data-src="images/album/p18.webp?v=1" alt="Album ảnh cưới trang 19"></div><div class="bpage" data-i="19"><img data-src="images/album/p19.webp?v=1" alt="Album ảnh cưới trang 20"></div><div class="bpage" data-i="20"><img data-src="images/album/p20.webp?v=1" alt="Album ảnh cưới trang 21"></div></div>
+  <div class="bctl"><button id="bPrev" type="button" aria-label="Trang trước">‹</button><span id="bNum">1 / 21</span><button id="bNext" type="button" aria-label="Trang sau">›</button></div>
 </section>
 
 <section class="reel-countdown" data-scene="23" data-name="COUNTDOWN">
@@ -1794,5 +1817,17 @@
 </script>
 
 <script>document.addEventListener('DOMContentLoaded',function(){var c=document.getElementById('giftCard');if(c)c.addEventListener('click',function(){document.querySelector('.gift').classList.add('open');c.setAttribute('aria-expanded','true')})});</script>
+<script>(function(){var b=document.getElementById('book');if(!b)return;var P=[].slice.call(b.querySelectorAll('.bpage')),n=P.length,cur=0,busy=false;
+function z(){P.forEach(function(p,i){p.style.zIndex=p.classList.contains('turned')?i:n-i+n})}
+function ld(){for(var i=cur;i<Math.min(n,cur+4);i++){var im=P[i].firstChild;if(im.dataset.src){im.src=im.dataset.src;delete im.dataset.src}}}
+function ui(){document.getElementById('bNum').textContent=(cur+1)+' / '+n;document.getElementById('bPrev').disabled=cur===0;document.getElementById('bNext').disabled=cur===n-1}
+function next(){if(cur>=n-1)return;P[cur].classList.add('turned');P[cur].style.zIndex=n*3;cur++;ld();ui();var p=P[cur-1];setTimeout(function(){z()},900)}
+function prev(){if(cur<=0)return;cur--;P[cur].style.zIndex=n*3;P[cur].classList.remove('turned');ld();ui();setTimeout(z,900)}
+z();ld();ui();
+b.addEventListener('click',function(e){var r=b.getBoundingClientRect();(e.clientX-r.left)<r.width*.3?prev():next()});
+document.getElementById('bNext').onclick=next;document.getElementById('bPrev').onclick=prev;
+var sx=null;b.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+b.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(dx)>40){e.preventDefault();dx<0?next():prev()}});
+})();</script>
 </body>
 </html>
