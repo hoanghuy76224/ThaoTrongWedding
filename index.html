@@ -734,6 +734,14 @@
   .gift .head{font-family:'Archivo',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--film-warm);margin-bottom:18px}
   .gift h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,7vw,52px);line-height:1.2;color:var(--film-cream);margin:0 0 22px}
   .gift p{font-family:'Fraunces',serif;font-style:italic;font-size:16px;line-height:1.8;color:var(--film-cream);opacity:.85;max-width:520px;margin:0 auto 30px}
+  .gift-card{display:block;position:relative;margin:0 auto;padding:0;border:1px solid rgba(154,131,96,.4);background:#fff;cursor:pointer;width:min(72vw,300px);aspect-ratio:4/5;overflow:hidden;border-radius:4px;box-shadow:0 14px 40px rgba(62,75,69,.18);transition:opacity .5s,transform .5s,max-height .6s}
+  .gift-card img{width:100%;height:100%;object-fit:cover;display:block}
+  .gift-tap{position:absolute;inset:auto 0 0 0;padding:46px 12px 16px;background:linear-gradient(transparent,rgba(30,36,33,.72));color:#f4f0e8;display:flex;flex-direction:column;gap:2px;font-family:'Fraunces',serif}
+  .gift-tap i{font-size:20px}
+  .gift-tap small{font-family:'Archivo',sans-serif;font-size:10px;letter-spacing:.25em;text-transform:uppercase;opacity:.85}
+  .gift-panel{max-height:0;overflow:hidden;opacity:0;transition:max-height .8s ease,opacity .8s ease}
+  .gift.open .gift-panel{max-height:900px;opacity:1}
+  .gift.open .gift-card{display:none}
   .gift .qr-frame{display:inline-block;border:1px solid rgba(154,131,96,.3)}
   .gift .bank{margin-top:22px;font-family:'Archivo',sans-serif;color:var(--film-cream);line-height:1.8}
   .gift .bank b{display:block;font-size:15px;letter-spacing:.12em;font-weight:600}
@@ -1147,9 +1155,15 @@
   <div class="head">Hộp mừng cưới</div>
   <h2>Với tình thương<br>&amp; lòng biết ơn</h2>
   <p>Nếu quý khách muốn gửi chút quà mừng, xin gửi kèm thông tin dưới đây. Với gia đình chúng tôi, món quà lớn nhất vẫn là sự hiện diện của quý khách.</p>
-  <div class="qr-frame"><img src="images/qr.png" alt="Mã QR mừng cưới" loading="lazy"></div>
-  <div class="bank"><b>LUC NHU THAO</b><span>Vietcombank · 0231000694939</span><span>Trụ sở CN Bắc Đắk Lắk</span></div>
-  <a class="qr-save" href="images/qr.png" download="qr-mung-cuoi-thao.png">Lưu mã QR</a>
+  <button class="gift-card" id="giftCard" type="button" aria-expanded="false" aria-controls="giftPanel">
+    <img src="images/s3.webp?v=1" alt="Cô dâu và chú rể" loading="lazy">
+    <span class="gift-tap"><i>Chạm để mở</i><small>Click to open</small></span>
+  </button>
+  <div class="gift-panel" id="giftPanel">
+    <div class="qr-frame"><img src="images/qr.png" alt="Mã QR mừng cưới" loading="lazy"></div>
+    <div class="bank"><b>LUC NHU THAO</b><span>Vietcombank · 0231000694939</span><span>Trụ sở CN Bắc Đắk Lắk</span></div>
+    <a class="qr-save" href="images/qr.png" download="qr-mung-cuoi-thao.png">Lưu mã QR</a>
+  </div>
 </section>
 
 <section class="end-credits" data-scene="24" data-name="FIN">
@@ -1779,5 +1793,6 @@
 })();
 </script>
 
+<script>document.addEventListener('DOMContentLoaded',function(){var c=document.getElementById('giftCard');if(c)c.addEventListener('click',function(){document.querySelector('.gift').classList.add('open');c.setAttribute('aria-expanded','true')})});</script>
 </body>
 </html>
